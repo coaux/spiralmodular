@@ -1,7 +1,8 @@
 dnl Process this file with autoconf to produce a configure script.
-AC_INIT(SpiralSynthModular.C)
+AC_INIT
+AC_CONFIG_SRCDIR([SpiralSynthModular.C])
 
-dnl Automake (can't use AC_CONFIG_HEADER - get complaints!)
+dnl Automake (can't use AC_CONFIG_HEADERS - get complaints!)
 AM_CONFIG_HEADER(config.h)
 
 dnl Checks for programs.
@@ -10,7 +11,15 @@ AC_PROG_CPP
 AC_PROG_INSTALL
 
 dnl Checks for header files.
-AC_HEADER_STDC
+m4_warn([obsolete],
+[The preprocessor macro 'STDC_HEADERS' is obsolete.
+  Except in unusual embedded environments, you can safely include all
+  C89 headers unconditionally.])dnl
+# Autoupdate added the next two lines to ensure that your configure
+# script's behavior did not change.  They are probably safe to remove.
+AC_CHECK_INCLUDES_DEFAULT
+AC_PROG_EGREP
+
 
 dnl Checks for typedefs, structures, and compiler characteristics.
 AC_C_CONST
@@ -212,8 +221,7 @@ AC_SUBST(CXXFLAGS)
 AC_SUBST(PLUGINLIST)
 
 dnl Modify the output files.
-AC_OUTPUT(
-SpiralSound/Plugins/AmpPlugin/Makefile
+AC_CONFIG_FILES([SpiralSound/Plugins/AmpPlugin/Makefile
 SpiralSound/Plugins/AnotherFilterPlugin/Makefile
 SpiralSound/Plugins/BeatMatchPlugin/Makefile
 SpiralSound/Plugins/ControllerPlugin/Makefile
@@ -266,7 +274,8 @@ SpiralSound/Plugins/WaveTablePlugin/Makefile
 SpiralSound/Plugins/XFadePlugin/Makefile
 SpiralSynthPluginLocation.h
 Makefile
-)
+])
+AC_OUTPUT
 
 echo -e "\nConfig options:"
 echo -n "libsndfile support for wave loading - "
