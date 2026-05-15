@@ -17,8 +17,8 @@
 */ 
 
 #include "Fl_EventMap.h"
-#include <FL/fl_draw.h>
-#include <FL/Fl_Window.h>
+#include <FL/fl_draw.H>
+#include <FL/Fl_Window.H>
 #include <FL/x.H>
 #include <stdio.h>
 

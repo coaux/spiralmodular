@@ -17,9 +17,9 @@
 */
 
 #include "MatrixPluginGUI.h"
-#include <FL/fl_draw.h>
 #include <FL/fl_draw.H>
-//#include <FL/fl_file_chooser.h>
+#include <FL/fl_draw.H>
+//#include <FL/fl_file_chooser.H>
 
 using namespace std;
 
