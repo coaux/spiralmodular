@@ -1,0 +1,55 @@
+{
+    "version": 5,
+    "cmakeMinimumRequired": {
+        "major": 4,
+        "minor": 2,
+        "patch": 0
+    },
+    "configurePresets": [
+        {
+            "name": "ninja-build",
+            "generator": "Ninja",
+            "hidden": true
+        },
+        {
+            "name": "debug",
+            "inherits": [
+                "ninja-build"
+            ],
+            "binaryDir": "${sourceDir}/build/debug",
+            "environment": {},
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": true,
+                "CMAKE_C_FLAGS": "-pipe -Wall -O0 -ggdb",
+                "CMAKE_CXX_FLAGS": "-pipe -Wall -O0 -ggdb",
+                "CMAKE_CXX_COMPILER": "clang++"
+            },
+        },
+        {
+            "name": "release",
+            "inherits": [
+                "ninja-build"
+            ],
+            "binaryDir": "${sourceDir}/build/release",
+            "environment": {},
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release",
+                "CMAKE_C_FLAGS": "-pipe -Wall -O3 -ffast-math -DNO_DEBUG -Wno-unused",
+                "CMAKE_CXX_FLAGS": "-pipe -Wall -O3 -ffast-math -DNO_DEBUG -Wno-unused"
+            }
+        },
+        {
+            "name": "release+debug",
+            "inherits": [
+                "release"
+            ],
+            "binaryDir": "${sourceDir}/build/release+debug",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "RelWithDebInfo",
+                "CMAKE_C_FLAGS": "-pipe -Wall -O3 -ffast-math -Wno-unused",
+                "CMAKE_CXX_FLAGS": "-pipe -Wall -O3 -ffast-math -Wno-unused"
+            }
+        },
+    ]
+}

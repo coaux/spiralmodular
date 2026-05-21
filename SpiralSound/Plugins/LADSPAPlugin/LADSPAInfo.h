@@ -21,7 +21,7 @@
 #ifndef __ladspa_info_h__
 #define __ladspa_info_h__
 
-#include <config.h>
+#include "config.h"
 
 #include <string>
 #include <vector>

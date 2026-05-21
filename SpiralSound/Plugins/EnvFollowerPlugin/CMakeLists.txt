@@ -1,0 +1,1 @@
+defplugin(EnvFollowerPlugin EnvFollowerPlugin.C EnvFollowerPluginGUI.C)

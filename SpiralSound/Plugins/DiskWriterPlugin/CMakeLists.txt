@@ -1,0 +1,1 @@
+defplugin(DiskWriterPlugin DiskWriterPlugin.C DiskWriterPluginGUI.C)

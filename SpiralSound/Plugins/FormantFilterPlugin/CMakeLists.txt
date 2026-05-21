@@ -1,0 +1,1 @@
+defplugin(FormantFilterPlugin FormantFilterPlugin.C FormantFilterPluginGUI.C)

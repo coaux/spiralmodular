@@ -44,8 +44,7 @@
 //#define DEBUG_PLUGINS
 //#define DEBUG_STREAM
 
-const static string LABEL = "SpiralSynthModular "+VER_STRING;
-static string TITLEBAR;
+static constexpr std::string_view APP_NAME{SSM_APP_NAME};
 
 static const int FILE_VERSION = 4;
 static int Numbers[512];
@@ -299,7 +298,7 @@ void SynthModular::UpdatePluginGUIs()
 
 SpiralWindowType *SynthModular::CreateWindow()
 {
-	m_TopWindow = new SpiralWindowType(MAIN_WIDTH, MAIN_HEIGHT, LABEL.c_str());
+	m_TopWindow = new SpiralWindowType(MAIN_WIDTH, MAIN_HEIGHT, SSM_LABEL);
         m_TopWindow->user_data((void*)(this));
 	//m_TopWindow->resizable(m_TopWindow);
         m_MainMenu = new Fl_Menu_Bar (0, 0, MAIN_WIDTH, 20, "");
@@ -1196,7 +1195,7 @@ ostream &operator<<(ostream &s, SynthModular &o)
 inline void SynthModular::cb_New_i (Fl_Widget *o, void *v) {
        if (m_DeviceWinMap.size()>0 && !Pawfal_YesNo ("New - Lose changes to current patch?"))
           return;
-       m_TopWindow->label (TITLEBAR.c_str());
+       m_TopWindow->label(SSM_LABEL);
        ClearUp();
 }
 
@@ -1219,8 +1218,8 @@ inline void SynthModular::cb_Load_i (Fl_Widget *o, void *v) {
              ClearUp();
              inf >> *this;
              inf.close();
-             TITLEBAR = LABEL + " " + fn;
-             m_TopWindow->label (TITLEBAR.c_str());
+             std::string title{std::string{APP_NAME} + ": " + fn};
+             m_TopWindow->label(fl_strdup(title.c_str()));
           }
        }
 }
@@ -1248,6 +1247,8 @@ inline void SynthModular::cb_Save_i (Fl_Widget *o, void *v) {
           }
           else {
              fl_message (string ("Error saving " + string(fn)).c_str());
+             std::string title{std::string{APP_NAME} + ": " + fn};
+             m_TopWindow->label(fl_strdup(title.c_str()));
           }
        }
 }
@@ -1589,8 +1590,8 @@ void SynthModular::LoadPatch(const char *fn)
 
 		inf.close();
 
-		TITLEBAR=LABEL+" "+fn;
-		m_TopWindow->label(TITLEBAR.c_str());
+		std::string title{std::string{APP_NAME} + ": " + fn};
+		m_TopWindow->label(fl_strdup(title.c_str()));
 	}
 }
 

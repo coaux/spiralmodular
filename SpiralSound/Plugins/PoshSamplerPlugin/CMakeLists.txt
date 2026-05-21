@@ -1,0 +1,1 @@
+defplugin(PoshSamplerPlugin PoshSamplerPlugin.C PoshSamplerPluginGUI.C)

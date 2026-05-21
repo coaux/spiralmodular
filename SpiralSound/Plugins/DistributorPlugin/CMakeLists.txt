@@ -1,0 +1,1 @@
+defplugin(DistributorPlugin DistributorPlugin.C DistributorPluginGUI.C)

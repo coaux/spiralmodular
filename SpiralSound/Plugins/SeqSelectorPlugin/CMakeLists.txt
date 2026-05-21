@@ -1,0 +1,1 @@
+defplugin(SeqSelectorPlugin SeqSelectorPlugin.C SeqSelectorPluginGUI.C)

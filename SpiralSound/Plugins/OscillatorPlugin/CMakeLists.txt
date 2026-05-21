@@ -1,0 +1,1 @@
+defplugin(OscillatorPlugin OscillatorPlugin.C OscillatorPluginGUI.C)

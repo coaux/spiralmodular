@@ -1,0 +1,49 @@
+// configuration for @CMAKE_PROJECT_NAME@ @CMAKE_PROJECT_VERSION@
+
+#pragma once
+
+#cmakedefine SSM_WITH_ALSA
+
+#cmakedefine SSM_WITH_OSS
+
+#cmakedefine SSM_WITH_JACK
+
+#cmakedefine SSM_WITH_LADSPA
+
+#cmakedefine SSM_WITH_SNDFILE
+
+// for Midi.o
+#ifdef SSM_WITH_ALSA
+#define USE_ALSA_MIDI
+#else
+/* #undef USE_ALSA_MIDI */
+#endif
+
+// for Midi.o
+#ifdef SSM_WITH_OSS
+#define USE_OSS_MIDI
+#else
+/* #undef USE_OSS_MIDI */
+#endif
+
+// for LADSPAPlugin
+#ifdef SSM_WITH_LADSPA
+#define HAVE_LIBLRDF
+#else
+/* #undef HAVE_LIBLRDF */
+#endif
+
+// for WaveChooser GUI, RiffWav
+#ifdef SSM_WITH_SNDFILE
+#define USE_LIBSNDFILE
+#else
+/* #undef USE_LIBSNDFILE */
+#endif
+
+// for SpiralInfo
+#define PLUGIN_PATH_LOCATION "@SSM_PLUGIN_DIR@"
+
+// application metadata
+#define SSM_VERSION "@CMAKE_PROJECT_VERSION@"
+#define SSM_APP_NAME "@CMAKE_PROJECT_DESCRIPTION@"
+#define SSM_LABEL "@CMAKE_PROJECT_DESCRIPTION@ @CMAKE_PROJECT_VERSION@"

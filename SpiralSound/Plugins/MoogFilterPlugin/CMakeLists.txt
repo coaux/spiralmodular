@@ -1,0 +1,1 @@
+defplugin(MoogFilterPlugin MoogFilterPlugin.C MoogFilterPluginGUI.C)

@@ -1,0 +1,1 @@
+defplugin(StereoMixerPlugin StereoMixerPlugin.C StereoMixerPluginGUI.C)

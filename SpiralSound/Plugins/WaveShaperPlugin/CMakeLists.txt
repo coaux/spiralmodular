@@ -1,0 +1,1 @@
+defplugin(WaveShaperPlugin WaveShaperPlugin.C WaveShaperPluginGUI.C)

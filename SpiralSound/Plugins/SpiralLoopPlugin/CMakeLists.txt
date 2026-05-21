@@ -1,0 +1,1 @@
+defplugin(SpiralLoopPlugin SpiralLoopPlugin.C SpiralLoopPluginGUI.C)

@@ -1,0 +1,1 @@
+defplugin(SampleHoldPlugin SampleHoldPlugin.C SampleHoldPluginGUI.C)

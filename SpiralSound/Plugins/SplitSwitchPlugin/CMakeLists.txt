@@ -1,0 +1,1 @@
+defplugin(SplitSwitchPlugin SplitSwitchPlugin.C SplitSwitchPluginGUI.C)

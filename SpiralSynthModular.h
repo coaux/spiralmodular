@@ -19,6 +19,8 @@
 #ifndef SPIRALSYNTHMODULAR
 #define SPIRALSYNTHMODULAR
 
+#include "config.h"
+
 #include <FL/Fl.H>
 #include <FL/x.H>
 #include <FL/Fl_Double_Window.H>

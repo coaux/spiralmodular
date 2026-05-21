@@ -1,0 +1,1 @@
+defplugin(AnotherFilterPlugin AnotherFilterPlugin.C AnotherFilterPluginGUI.C)

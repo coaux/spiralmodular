@@ -1,0 +1,1 @@
+defplugin(ComplexEnvelopePlugin ComplexEnvelopePlugin.C ComplexEnvelopePluginGUI.C)
