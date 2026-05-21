@@ -3,7 +3,10 @@
 *.rej
 *.bak
 *.log
+*#
+.#*
 build*/
+*.so
 ## https://github.com/github/gitignore/blob/main/Autotools.gitignore
 # - automake
 Makefile.in
